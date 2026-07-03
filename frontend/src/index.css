@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+/* Warm field-operations interface for fertiliser traceability. */
+
+@theme {
+  /* Greens */
+  --color-forest: #162119;   /* sidebar / deepest */
+  --color-pine: #213126;     /* sidebar hover */
+  --color-moss: #236a45;     /* primary */
+  --color-leaf: #3f9f67;     /* verified / success */
+  --color-leaf-soft: #e5f3e8;
+
+  /* Earth */
+  --color-clay: #88451f;     /* in transit / accent */
+  --color-clay-soft: #f3dfd0;
+  --color-wheat: #77490f;    /* expiry / caution */
+  --color-wheat-soft: #f5ead6;
+
+  /* Neutrals */
+  --color-canvas: #f4efe5;   /* app background */
+  --color-card: #fffdf7;
+  --color-ink: #182118;
+  --color-mute: #5f6a60;     /* secondary text */
+  --color-line: #d9d7c9;
+  --color-alert: #b42335;
+  --color-alert-soft: #f8e3e5;
+
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(35, 106, 69, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(35, 106, 69, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 18% 0%, rgba(255, 253, 247, 0.96), transparent 34%),
+    linear-gradient(180deg, #fbf5eb 0%, var(--color-canvas) 54%, #ede4d6 100%);
+  background-size: 42px 42px, 42px 42px, auto, auto;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+
+::selection {
+  background: var(--color-leaf-soft);
+  color: var(--color-forest);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Shared field styling for forms */
+.field-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-line);
+  background: rgba(255, 253, 247, 0.96);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-ink);
+  outline: none;
+  box-shadow: inset 0 1px 1px rgba(28, 38, 32, 0.03);
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.field-input:focus {
+  background: var(--color-card);
+  border-color: var(--color-moss);
+  box-shadow: 0 0 0 3px var(--color-leaf-soft);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(46, 109, 72, 0.55);
+  outline-offset: 2px;
+}
+
+button svg,
+a svg {
+  flex-shrink: 0;
+}
+
+button,
+a {
+  min-width: 0;
+}
+
+/* Soft card shadow used across the app */
+.card-shadow {
+  min-width: 0;
+  box-shadow:
+    0 1px 2px rgba(22, 33, 25, 0.06),
+    0 14px 34px rgba(22, 33, 25, 0.07);
+}
+
+.console-panel {
+  min-width: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 247, 0.98), rgba(242, 235, 221, 0.92));
+  box-shadow:
+    0 1px 2px rgba(22, 33, 25, 0.06),
+    0 18px 48px rgba(22, 33, 25, 0.09);
+}
+
+.table-shell {
+  overflow-x: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav-scroll {
+  scrollbar-width: none;
+}
+.mobile-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.field-hero {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(21, 22, 18, 0.84), rgba(21, 22, 18, 0.58) 52%, rgba(21, 22, 18, 0.28)),
+    url('./assets/field-operations.png') center / cover no-repeat;
+}
+.field-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 58% 30%, rgba(255, 241, 205, 0.4), transparent 18%),
+    linear-gradient(168deg, transparent 0 56%, rgba(255, 213, 112, 0.28) 56.1% 56.45%, transparent 56.7%);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+.field-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(17, 20, 15, 0.08), rgba(17, 20, 15, 0.52)),
+    radial-gradient(circle at 50% 105%, rgba(0, 0, 0, 0.32), transparent 46%);
+}
+
+.field-hero-badge {
+  border: 1px solid rgba(255, 250, 241, 0.2);
+  background: rgba(255, 250, 241, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+.brand-tile {
+  background:
+    linear-gradient(90deg, rgba(45, 44, 37, 0.5), rgba(239, 225, 203, 0.18)),
+    url('./assets/field-operations.png') center / cover no-repeat;
+}
+
+.route-visual,
+.sidebar-route-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.26), rgba(35, 36, 29, 0.56)),
+    url('./assets/field-operations.png') center / cover no-repeat;
+}
+.route-visual::before,
+.sidebar-route-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 0 55%, rgba(255, 250, 241, 0.56) 55.4% 56%, transparent 56.4%),
+    radial-gradient(circle at 18% 57%, rgba(172, 190, 37, 0.9), transparent 4%),
+    radial-gradient(circle at 50% 57%, rgba(172, 190, 37, 0.9), transparent 4%),
+    radial-gradient(circle at 82% 57%, rgba(172, 190, 37, 0.9), transparent 4%);
+  opacity: 0.86;
+}
+.route-visual::after,
+.sidebar-route-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.12), rgba(21, 22, 18, 0.54)),
+    linear-gradient(90deg, rgba(21, 22, 18, 0.12), rgba(21, 22, 18, 0));
+}
+.route-visual > *,
+.sidebar-route-card > * {
+  z-index: 1;
+}
+
+.route-visual > :not(.absolute),
+.sidebar-route-card > :not(.absolute) {
+  position: relative;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise { animation: rise 0.4s ease both; }
