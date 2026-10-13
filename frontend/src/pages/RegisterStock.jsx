@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { PackagePlus, Download, CheckCircle2, QrCode } from 'lucide-react';
 import api from '../api/client';
 import { useAuth } from '../context/AuthContext';
-import { DEMO_DEPOTS } from '../lib/demoDepots';
+import { PROGRAMME_DEPOTS } from '../lib/programmeDepots';
 
 function emptyForm() {
   return {
@@ -117,7 +117,7 @@ export default function RegisterStock() {
             <Field label="Destination" required>
               <select value={form.destination} onChange={(e) => update('destination', e.target.value)} required className="field-input">
                 <option value="">Select destination</option>
-                {DEMO_DEPOTS.map((depot) => (
+                {PROGRAMME_DEPOTS.map((depot) => (
                   <option key={depot} value={depot}>{depot}</option>
                 ))}
               </select>

@@ -104,7 +104,7 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 autoComplete="current-password"
-                placeholder="Demo@12345"
+                placeholder="Enter your password"
                 className="field-input"
               />
             </label>
@@ -130,16 +130,6 @@ export default function Login() {
               {busy ? 'Signing in...' : <>Sign in <ArrowRight size={16} /></>}
             </button>
           </form>
-
-          <div className="mt-8 rounded-lg border border-dashed border-line bg-card p-3 text-xs text-mute">
-            <p className="font-medium text-ink">Demo accounts</p>
-            <p className="mt-1 font-mono">supplier@demo.com - Demo@12345</p>
-            <p className="font-mono">depot@demo.com - Demo@12345</p>
-            <p className="font-mono">depot.nakuru@demo.com - Demo@12345</p>
-            <p className="font-mono">coop@demo.com - Demo@12345</p>
-            <p className="font-mono">coop.nakuru@demo.com - Demo@12345</p>
-            <p className="font-mono">admin@demo.com - Demo@12345</p>
-          </div>
         </div>
       </div>
     </div>

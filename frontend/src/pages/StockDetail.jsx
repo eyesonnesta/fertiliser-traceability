@@ -21,7 +21,7 @@ import api from '../api/client';
 import StatusBadge from '../components/StatusBadge';
 import SupplyChainStepper from '../components/SupplyChainStepper';
 import { useAuth } from '../context/AuthContext';
-import { DEMO_DEPOTS } from '../lib/demoDepots';
+import { PROGRAMME_DEPOTS } from '../lib/programmeDepots';
 import { ROLE_LABELS } from '../lib/labels';
 
 export default function StockDetail() {
@@ -284,10 +284,10 @@ export default function StockDetail() {
                   <EditField label="Destination">
                     <select className="field-input" value={editForm.destination} onChange={(e) => updateEditField('destination', e.target.value)} required>
                       <option value="">Select destination</option>
-                      {editForm.destination && !DEMO_DEPOTS.includes(editForm.destination) && (
+                      {editForm.destination && !PROGRAMME_DEPOTS.includes(editForm.destination) && (
                         <option value={editForm.destination}>{editForm.destination}</option>
                       )}
-                      {DEMO_DEPOTS.map((depot) => (
+                      {PROGRAMME_DEPOTS.map((depot) => (
                         <option key={depot} value={depot}>{depot}</option>
                       ))}
                     </select>

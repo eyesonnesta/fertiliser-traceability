@@ -30,17 +30,6 @@ npm run dev
 
 Open the local URL Vite prints, usually `http://localhost:5173`.
 
-## Demo Accounts
-
-Use the seeded backend accounts:
-
-- National Supplier: `supplier@demo.com` / `Demo@12345`
-- Depot Manager: `depot@demo.com` / `Demo@12345`
-- Cooperative Official: `coop@demo.com` / `Demo@12345`
-- System Administrator: `admin@demo.com` / `Demo@12345`
-
-For a populated demo, run `npm run seed` and `npm run seed:demo` in the backend.
-
 ## Main Pages
 
 - `/dashboard` - stock ledger and summary metrics

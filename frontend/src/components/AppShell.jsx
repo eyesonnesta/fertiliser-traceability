@@ -1,5 +1,5 @@
 // Responsive application chrome. Desktop gets a fixed sidebar; smaller screens
-// get a compact top rail with scrollable navigation for demo usability.
+// get a compact top rail with scrollable navigation for smaller screens.
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {

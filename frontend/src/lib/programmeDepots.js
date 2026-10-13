@@ -1,4 +1,4 @@
-export const DEMO_DEPOTS = [
+export const PROGRAMME_DEPOTS = [
   'Nairobi Depot',
   'Nakuru Depot',
 ];
