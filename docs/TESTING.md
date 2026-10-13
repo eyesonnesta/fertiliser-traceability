@@ -1,6 +1,8 @@
 # Testing Evidence
 
-This file records the verification expected before the final `develop` to `main` merge.
+This file records the verification expected before a future release promotion.
+The current instruction is to keep work on `develop` and not merge into `main`
+unless that is explicitly approved later.
 
 ## Backend Checks
 

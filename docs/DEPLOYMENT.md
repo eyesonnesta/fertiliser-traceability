@@ -44,4 +44,5 @@ npm.cmd run build
 - Secrets are not committed.
 - README setup instructions are current.
 - Testing evidence has been added.
-- Verified `develop` has been merged into `main`.
+- A future `main` promotion has been explicitly approved before any merge is
+  run.

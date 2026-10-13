@@ -58,19 +58,18 @@ reports backend: add custody audit reports and CSV export
 
 Avoid vague messages such as `update`, `changes`, or `work done`.
 
-## Final Merge
+## Main Branch Hold
 
-After verification:
+The current instruction is to keep work on `develop` and not merge into
+`main`. Treat `main` as a stable branch that should only be updated after a
+separate, explicit release decision.
 
-```powershell
-git checkout main
-git pull origin main
-git merge develop
-git push origin main
-```
+Before any future promotion to `main`, first verify:
 
-Suggested merge message:
+- `develop` contains the intended final code and documentation.
+- Frontend and backend checks have passed.
+- Manual workflow evidence has been captured.
+- The user has explicitly approved the `main` promotion.
 
-```text
-merge: promote verified develop build to main
-```
+This document intentionally does not include `main` merge commands because the
+current repository work should remain on `develop`.
