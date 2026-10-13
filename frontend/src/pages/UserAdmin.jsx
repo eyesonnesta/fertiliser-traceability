@@ -218,7 +218,7 @@ export default function UserAdmin() {
                   <Mail size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-mute" />
                   <input
                     type="email"
-                    className="field-input pl-9"
+                    className="field-input field-input-icon-left"
                     value={form.email}
                     onChange={(e) => update('email', e.target.value)}
                     required
@@ -455,7 +455,7 @@ function PasswordInput({ label, value, onChange }) {
         <input
           type="password"
           minLength="8"
-          className="field-input pl-9"
+          className="field-input field-input-icon-left"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           required

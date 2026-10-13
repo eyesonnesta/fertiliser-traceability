@@ -326,7 +326,7 @@ export default function Dashboard() {
                   value={ledgerFilters.search}
                   onChange={(e) => updateFilter('search', e.target.value)}
                   placeholder="Batch or type"
-                  className="field-input pl-9"
+                  className="field-input field-input-icon-left"
                 />
               </span>
             </label>
